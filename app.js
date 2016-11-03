@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
+var browserInfo = require('./browserInfo.js');
 
-app.get("/",function(req,res){
-   res.send("HI!"); 
-});
+
+
+app.get("/api/myinfo",browserInfo.getInfo);
 
 
 app.listen(process.env.PORT || 8080, function () {
